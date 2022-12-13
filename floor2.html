@@ -16,6 +16,11 @@
   </script>
   <title>Room3D</title>
   <style>
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+
     .img-box {
       position: relative;
       width: 100%;
@@ -25,8 +30,8 @@
 
     .plus-image {
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 22%;
+      left: 52%;
       transform: translateX(-50%) translateY(-50%);
       z-index: 1;
     }
@@ -36,7 +41,6 @@
       top: 20%;
       left: 52%;
       transform: translateX(-50%) translateY(-50%);
-      z-index: 1;
     }
 
     .play_png {
@@ -156,8 +160,10 @@
     </header>
   </div>
   <div class="text-center">
-    <img src="pic/TK.out - Resize.png" class="img-fluid plus-image" alt="ชั้นที่ 2">
-    <img id="myImg" src="pic/pin.png" width="60px" height="60px" class='mark-1 plus-image'>
+    <img src="pic/TK.out - Resize.png" class="img-fluid" alt="ชั้นที่ 2">
+    <!-- จุดที่ 2 -->
+    <img id="myImg" style="display: block; margin: auto;" src="pic/pin.png" width="55px" height="55px"
+      class="img-fluid plus-image">
     <!-- The Modal -->
     <div id="myModal" class="modal">
       <span class="close">&times;</span>
@@ -174,6 +180,7 @@
 
 
   <script src="modal.js"></script>
+
 </body>
 
 </html>

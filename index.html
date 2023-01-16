@@ -4,23 +4,163 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-  </script>
   <title>Room3D</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
     .img-box {
-      position: absolute;
+      position: relative;
       width: 100%;
       height: 70%;
       text-align: center;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .map {
+      position: relative;
+      display: inline-block;
+
+    }
+
+    .map img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .box {
+      width: 8%;
+      height: 8%;
+      background-image: url(https://raw.githubusercontent.com/aKittyCat/aMap/main/pic/pin.png);
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+    }
+
+    #pin-1 {
+      top: 45%;
+      left: 18%;
+    }
+
+    #pin-2 {
+      top: 14%;
+      left: 45%;
+    }
+
+    #pin-3 {
+      top: 37%;
+      left: 70%;
+    }
+
+    #pin-4 {
+      top: 40%;
+      left: 53%;
+    }
+
+    #pin-5 {
+      top: 53%;
+      left: 6%;
+    }
+
+    .box:hover>.pin-text {
+      display: block;
+    }
+
+    .pin-text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 75%;
+      white-space: nowrap;
+      display: none;
+    }
+
+    .pin-text h3 {
+      font-family: "Sriracha";
+      color: rgb(255, 255, 0);
+      text-shadow: 1px 1px 1px #000;
+    }
+
+    #myImg {
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #myImg:hover {
+      opacity: 0.7;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.9);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    /* Add Animation - Zoom in the Modal */
+    .modal-content {
+      animation-name: zoom;
+      animation-duration: 0.6s;
+    }
+
+    @keyframes zoom {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px) {
+      .modal-content {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -39,11 +179,105 @@
     </header>
   </div>
 
+  <div class="map">
+    <img alt="m1" src="pic\TK1.png">
+
+    <div id="pin-1" class="box" data-toggle="modal" data-target="#modal-1">
+      <div class="pin-text">
+        <h3>จุดที่ 1</h3>
+      </div>
+    </div>
+
+    <div id="myImg">
+      <div id="pin-2" class="box">
+        <div class="pin-text">
+          <h3>จุดที่ 2</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="pin-3" class="box">
+      <div class="pin-text">
+        <h3>จุดที่ 3</h3>
+      </div>
+    </div>
+
+    <div id="pin-4" class="box">
+      <div class="pin-text">
+        <h3>จุดที่ 4</h3>
+      </div>
+    </div>
+
+    <div id="pin-5" class="box" data-toggle="modal" data-target="#myModal">
+      <div class="pin-text">
+        <h3>จุดที่ 5</h3>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-1">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe class="img-box" width="90%" height="600px" allowFullScreen="true"
+            allow="accelerometer; magnetometer; gyroscope"
+            style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);"
+            src="https://momento360.com/e/u/1983f8441ada4ca39c0572e80259596e?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
 
 
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script>
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach((box) => {
+      box.addEventListener('click', (event) => {
+        const modalId = event.currentTarget.getAttribute('data-target');
+        const modal = document.querySelector(modalId);
+        modal.classList.add('show');
+        modal.style.display = 'block';
+      });
+    })
+
+    const modal = document.querySelector('.modal');
+    const closeButton = document.querySelector('.close-button');
+
+    // Close the modal when the close button is clicked
+    closeButton.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // Close the modal when the user clicks anywhere outside the modal
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 
 </html>

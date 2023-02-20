@@ -4,17 +4,17 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-  </script>
   <title>Room3D</title>
 
   <!-- Template Main CSS File -->
@@ -23,46 +23,214 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
   </style>
-  
+
 </head>
 
 <body>
   <div class="container-fluid bg-dark">
     <header class="p-5 d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <a href="floor1.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
         <span class="fs-4 text-white fw-bolder">TK SQUARE KORAT</span>
       </a>
       <ul class="nav nav-pills fw-bold">
-        <li class="nav-item"><a href="index.html" class="bg-secondary nav-link text-white me-3"
+        <li class="nav-item"><a href="floor1.html" class="bg-secondary nav-link text-white me-3"
             aria-current="page">ชั้นที่ 1</a></li>
         <li class="nav-item"><a href="floor2.html" class="bg-secondary nav-link text-white">ชั้นที่ 2</a></li>
       </ul>
     </header>
   </div>
-  <div class="text-center ">
-    <img src="pic/TK.out - Resize.png" class="img-fluid plus-image" alt="ชั้นที่ 2">
-    <!-- จุดที่ 2 -->
-    <img id="myImages" style="display: block; margin: auto; " src="pic/pin.png" width="55px" height="55px"
-      class="plus-image play_png">
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <span class="close">&times;</span>
-      <frame class="modal-content img-box" width="90%" height="600px" allowFullScreen="true"
-        allow="accelerometer; magnetometer; gyroscope"
-        style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);"
-        src="https://momento360.com/e/u/1983f8441ada4ca39c0572e80259596e?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&display-plan=true">
-      </frame>
-      <div id="caption"></div>
+
+  <div class="map">
+    <img alt="m1" src="pic\TK2.png">
+
+    <div id="myImg">
+      <div id="pin-6" class="box" data-toggle="modal" data-target="#modal-1">
+        <div class="pin-text">
+          <h3>จุดที่ 1</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="myImg">
+      <div id="pin-7" class="box" data-toggle="modal" data-target="#modal-2">
+        <div class="pin-text">
+          <h3>จุดที่ 2</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="myImg">
+      <div id="pin-8" class="box" data-toggle="modal" data-target="#modal-3">
+        <div class="pin-text">
+          <h3>จุดที่ 3</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="myImg">
+      <div id="pin-9" class="box" data-toggle="modal" data-target="#modal-4">
+        <div class="pin-text">
+          <h3>จุดที่ 4</h3>
+        </div>
+      </div>
+    </div>
+
+    <div id="myImg">
+      <div id="pin-10" class="box" data-toggle="modal" data-target="#modal-5">
+        <div class="pin-text">
+          <h3>จุดที่ 5</h3>
+        </div>
+      </div>
     </div>
 
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="modal-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close-button btn btn-danger btn-circle" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fmap-box">
+            <iframe class="img-fluid" width="600px" height="350px" frameborder="0" allowFullScreen="true"
+              allow="accelerometer; magnetometer; gyroscope"
+              src="https://momento360.com/e/u/754de40787ba4f19857f5c89afcfa7c5?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&autoplay-annotations=true&display-plan=true">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-2" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close-button btn btn-danger btn-circle" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fmap-box">
+            <iframe class="img-fluid" width="600px" height="350px" frameborder="0" allowFullScreen="true"
+              allow="accelerometer; magnetometer; gyroscope"
+              src="https://momento360.com/e/u/1aed3e86a1b9427b88e8f42ffc327c0f?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&autoplay-annotations=true&display-plan=true">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-3" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close-button btn btn-danger btn-circle" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fmap-box">
+            <iframe class="img-fluid" width="600px" height="350px" frameborder="0" allowFullScreen="true"
+              allow="accelerometer; magnetometer; gyroscope"
+              src="https://momento360.com/e/u/1983f8441ada4ca39c0572e80259596e?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&autoplay-annotations=true&display-plan=true">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-4" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close-button btn btn-danger btn-circle" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fmap-box">
+            <iframe class="img-fluid" width="600px" height="350px" frameborder="0" allowFullScreen="true"
+              allow="accelerometer; magnetometer; gyroscope"
+              src="https://momento360.com/e/u/a6212a6fcefd4c1cbe3323d9296455c8?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&autoplay-annotations=true&display-plan=true">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal-5" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close-button btn btn-danger btn-circle" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="fmap-box">
+            <iframe class="img-fluid" width="600px" height="350px" frameborder="0" allowFullScreen="true"
+              allow="accelerometer; magnetometer; gyroscope"
+              src="https://momento360.com/e/u/fb7dc03b30f3464b83e7ce344e59a4e7?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium&autoplay-annotations=true&display-plan=true">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script>
+    const boxes = document.querySelectorAll('.box');
 
+    boxes.forEach((box) => {
+      box.addEventListener('click', (event) => {
+        const modalId = event.currentTarget.getAttribute('data-target');
+        const modal = document.querySelector(modalId);
+        modal.classList.add('show');
+        modal.style.display = 'block';
+      });
+    });
 
-  <script src="modal.js"></script>
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-button');
 
+    // Close the modal when the close button is clicked
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        modal.style.display = 'none';
+      });
+    });
+
+    // Close the modal when the user clicks anywhere outside the modal
+    modals.forEach((modal) => {
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.style.display = 'none';   
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

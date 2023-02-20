@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.img-box {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+}
+
+.fmap-box {
+    margin: auto;
+    text-align: center;
+}
+
+.map {
+    position: relative;
+    display: inline-block;
+}
+
+.map img {
+    max-width: 100%;
+    display: block;
+}
+
+.box {
+    width: 8%;
+    height: 8%;
+    background-image: url(https://raw.githubusercontent.com/aKittyCat/aMap/main/pic/pin.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+}
+
+#pin-1 {
+    top: 45%;
+    left: 18%;
+}
+
+#pin-2 {
+    top: 14%;
+    left: 45%;
+}
+
+#pin-3 {
+    top: 37%;
+    left: 70%;
+}
+
+#pin-4 {
+    top: 40%;
+    left: 53%;
+}
+
+#pin-5 {
+    top: 53%;
+    left: 6%;
+}
+
+.box:hover>.pin-text {
+    display: block;
+}
+
+.pin-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20%;
+    white-space: nowrap;
+    display: none;
+}
+
+.pin-text h3 {
+    font-family: "Sriracha";
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 1px #000;
+}
+
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 70px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+.modal-header {
+    border: 0;
+}
+
+.modal-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/*Smaller Screens 480px */
+@media only screen and (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+    }
+
+    .img-fluid {
+        width: 90%;
+    }
+}
+
+/*Smaller Screens 700px */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+
+    .img-fluid {
+        width: 90%;
+    }
+}
+
+/*Smaller Screens 1280px */
+@media only screen and (max-width: 1280px) {
+    .modal-content {
+        width: 100%;
+    }
+
+    .img-fluid {
+        width: 90%;
+    }
+}
+
+.img-fluid {
+    max-width: 600px;
+    height: 350px;
+}

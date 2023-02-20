@@ -4,7 +4,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
   <!-- Font -->
@@ -52,7 +52,7 @@
     </div>
 
     <div id="myImg">
-      <div id="pin-2" class="box">
+      <div id="pin-2" class="box" data-toggle="modal" data-target="#modal-2">
         <div class="pin-text">
           <h3>จุดที่ 2</h3>
         </div>
@@ -60,7 +60,7 @@
     </div>
 
     <div id="myImg">
-      <div id="pin-3" class="box">
+      <div id="pin-3" class="box" data-toggle="modal" data-target="#modal-3">
         <div class="pin-text">
           <h3>จุดที่ 3</h3>
         </div>
@@ -68,7 +68,7 @@
     </div>
 
     <div id="myImg">
-      <div id="pin-4" class="box">
+      <div id="pin-4" class="box" data-toggle="modal" data-target="#modal-4">
         <div class="pin-text">
           <h3>จุดที่ 4</h3>
         </div>
@@ -76,7 +76,7 @@
     </div>
 
     <div id="myImg">
-      <div id="pin-5" class="box" data-toggle="modal" data-target="#myModal">
+      <div id="pin-5" class="box" data-toggle="modal" data-target="#modal-5">
         <div class="pin-text">
           <h3>จุดที่ 5</h3>
         </div>
@@ -121,7 +121,7 @@
           <div class="fmap-box">
             <iframe class="img-fluid" width="600px" height="350px" frameborder="0" allowFullScreen="true"
               allow="accelerometer; magnetometer; gyroscope"
-              src="https://momento360.com/e/u/1aed3e86a1b9427b88e8f42ffc327c0f?utm_campaign=embed&utm_source=other&heading=-2.2&pitch=-5&field-of-view=75&size=medium&display-plan=true">
+              src="https://momento360.com/e/u/1983f8441ada4ca39c0572e80259596e?utm_campaign=embed&utm_source=other&heading=59.13&pitch=22.76&field-of-view=69&size=medium&display-plan=true">
             </iframe>
           </div>
         </div>
@@ -209,21 +209,28 @@
         modal.classList.add('show');
         modal.style.display = 'block';
       });
-    })
+    });
 
-    const modal = document.querySelector('.modal');
-    const closeButton = document.querySelector('.close-button');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-button');
 
     // Close the modal when the close button is clicked
-    closeButton.addEventListener('click', () => {
-      modal.style.display = 'none';
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const modal = button.closest('.modal');
+        modal.classList.remove('show');
+        modal.style.display = 'block';
+      });
     });
 
     // Close the modal when the user clicks anywhere outside the modal
-    modal.addEventListener('click', (event) => {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
+    modals.forEach((modal) => {
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          modal.classList.remove('show');
+          modal.style.display = 'block';
+        }
+      });
     });
   </script>
 </body>

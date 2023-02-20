@@ -30,7 +30,7 @@
 .box {
     width: 8%;
     height: 8%;
-    background-image: url(https://raw.githubusercontent.com/aKittyCat/aMap/main/pic/pin.png);
+    background-image: url("pic/pin.png");
     background-position: top center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -68,9 +68,9 @@
 
 .pin-text {
     position: absolute;
-    top: 50%;
+    top: 150%;
     transform: translateY(-50%);
-    left: -20%;
+    left: 0%;
     white-space: nowrap;
     display: none;
 }
